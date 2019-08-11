@@ -9,8 +9,12 @@ export default class Item extends Component {
         }
     }
 
-    handleClickFolderButton(){
+    toggleFolder = () => {
         console.log('click open folder')
+       
+        const oppositeBoolean = !this.state.folderOpen
+        console.log(oppositeBoolean)
+        this.setState({folderOpen: oppositeBoolean})
       }
 
     render() {
@@ -18,8 +22,9 @@ export default class Item extends Component {
             return (
               <div key={this.props.item.name}>
                 name: {this.props.item.name} - type: {this.props.item.type}{" "}
-                <button onClick={ this.handleClickFolderButton }>open/close folder</button>
-                <FolderContents files={this.props.item.files}/>
+                <button onClick={ this.toggleFolder }>open/close folder</button>
+                {this.state.folderOpen && <FolderContents files={this.props.item.files}/>}
+                
               </div>
             );
           } else {
