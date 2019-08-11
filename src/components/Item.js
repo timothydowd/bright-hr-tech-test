@@ -18,6 +18,13 @@ export default class Item extends Component {
               <div key={this.props.item.name}>
                 name: {this.props.item.name} - type: {this.props.item.type}{" "}
                 <button onClick={ this.handleClickFolderButton }>open/close folder</button>
+                <ul>
+                    {this.props.item.files.map(file => {
+                        return(
+                            <li key={file.name}>{file.name} - {file.type} - {file.added}</li>
+                        )
+                    })}
+                </ul>
               </div>
             );
           } else {
