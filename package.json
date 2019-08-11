@@ -8,9 +8,9 @@
     "react-scripts": "3.1.0"
   },
   "scripts": {
+    "test": "mocha ./src/spec/*.spec.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
