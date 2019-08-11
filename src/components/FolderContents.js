@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
-export default class FolderContents extends Component {
-  render() {
+const FolderContents = (props) => {
+  
     return (
       <ul>
-        {this.props.files.map(file => {
+        {props.files.map(file => {
           return (
             <li key={file.name}>
               name: {file.name} - type: {file.type} - added: {file.added}
@@ -13,5 +13,7 @@ export default class FolderContents extends Component {
         })}
       </ul>
     );
-  }
+  
 }
+
+export default FolderContents;
