@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import data from "./data/data.json";
+import Item from './components/Item'
 
 export default class App extends Component {
   constructor(props) {
@@ -9,28 +10,15 @@ export default class App extends Component {
     };
   }
 
-  handleClickFolderButton(){
-    console.log('click open folder')
-  }
+  
 
   render() {
     return (
       <ul>
         {this.state.data.map(item => {
-          if (item.type === "folder") {
-            return (
-              <li key={item.name}>
-                name: {item.name} - type: {item.type}{" "}
-                <button onClick={ this.handleClickFolderButton }>open/close folder</button>
-              </li>
-            );
-          } else {
-            return (
-              <li key={item.name}>
-                name: {item.name} - type: {item.type} - added: {item.added}
-              </li>
-            );
-          }
+          return (
+            <li key={item.name}> <Item item={item}/> </li>
+          )
         })}
       </ul>
     );
