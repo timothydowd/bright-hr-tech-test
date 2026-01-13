@@ -5,7 +5,7 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.0"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "test": "mocha ./src/spec/*.spec.js",
@@ -32,6 +32,6 @@
     "chai": "^4.2.0",
     "chai-sorted": "^0.2.0",
     "deep-freeze": "0.0.1",
-    "mocha": "^6.2.0"
+    "mocha": "^11.7.5"
   }
 }
